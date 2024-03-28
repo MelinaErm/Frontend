@@ -16,7 +16,15 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
-
+        <!--this is the search view-->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search events"
+            app:layout_scrollFlags="scroll|enterAlways" />
+        <!--the changes end here-->
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
