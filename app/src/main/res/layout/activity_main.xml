@@ -16,15 +16,32 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
-        <!--this is the search view-->
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_view"
+
+        <!--changes-->
+
+        <TextView
+            android:id="@+id/location_hint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please type the location:"
+            android:layout_margin="8dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- AutoCompleteTextView -->
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:queryHint="Search events"
+            android:layout_marginTop="8dp"
+            android:hint="Search events"
+            android:completionThreshold="1"
             app:layout_scrollFlags="scroll|enterAlways" />
-        <!--the changes end here-->
+
+        <!-- End of changes -->
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
