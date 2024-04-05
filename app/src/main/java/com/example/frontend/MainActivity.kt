@@ -1,10 +1,7 @@
 package com.example.frontend
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             hideKeyboard()
             val selectedItem = parent.getItemAtPosition(position) as String
             Snackbar.make(binding.root, "Location: $selectedItem", Snackbar.LENGTH_LONG).show()
+            navigateToEventsActivity(selectedItem) // Pass the selected city to navigateToEventsActivity
         }
 
         //categories listeners
@@ -49,14 +47,17 @@ class MainActivity : AppCompatActivity() {
         binding.danceLl.setOnClickListener {
             Snackbar.make(binding.root, "Navigate to dance events", Snackbar.LENGTH_LONG).show()
         }
-
     }
 
+    private fun navigateToEventsActivity(selectedCity: String) {
+        val intent = Intent(this, EventsActivity::class.java)
+        intent.putExtra("selectedCity", selectedCity)
+        startActivity(intent)
+    }
 
     private fun hideKeyboard() {
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
     }
-
 }
 
