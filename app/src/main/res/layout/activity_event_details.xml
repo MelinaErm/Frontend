@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,39 +7,141 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- title event-->
             <TextView
                 android:id="@+id/event_title_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Event Title"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <!-- image event-->
+            <ImageView
+                android:id="@+id/event_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_image"
+                android:layout_below="@id/event_title_text" />
+
+            <!-- date event -->
+            <TextView
+                android:id="@+id/date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/event_image" />
 
             <TextView
-                android:id="@+id/event_detail_text"
+                android:id="@+id/date_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_image"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="17dp"
+                android:layout_toRightOf="@id/date_label"
+                android:text="Event Date"
+                android:textColor="@android:color/darker_gray" />
+
+            <!-- price event -->
+            <TextView
+                android:id="@+id/price_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/date_label" />
+
+            <TextView
+                android:id="@+id/price_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_text"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/price_label"
+                android:text="Event Price €"
+                android:textColor="@android:color/darker_gray" />
+
+            <!-- city event -->
+            <TextView
+                android:id="@+id/city_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/price_label" />
+
+            <TextView
+                android:id="@+id/city_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_text"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/city_label"
+                android:text="Event City"
+                android:textColor="@android:color/darker_gray" />
+
+            <!-- remaining tickets -->
+            <TextView
+                android:id="@+id/remaining_tickets_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remaining Tickets:"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/city_label" />
+
+            <TextView
+                android:id="@+id/remaining_tickets_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_text"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/remaining_tickets_label"
+                android:text="Remaining Tickets"
+                android:textColor="@android:color/darker_gray" />
+
+            <!-- description event -->
+            <TextView
+                android:id="@+id/event_description_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Event Description"
-                android:layout_marginTop="8dp" />
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/remaining_tickets_label" />
 
-            <!-- more textviews etc. -->
-
+            <!-- button to send ticket -->
             <Button
                 android:id="@+id/btnSendTicket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Send Ticket"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp" />
-        </LinearLayout>
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/event_description_text"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>

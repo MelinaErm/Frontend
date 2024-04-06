@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.autoCompleteTextView.setAdapter(adapter)
 
         //set up item click listener for AutoCompleteTextView
-        binding.autoCompleteTextView.setOnItemClickListener { parent, view, position, id ->
+        binding.autoCompleteTextView.setOnItemClickListener { parent, _, position, _ ->
             hideKeyboard()
             val selectedItem = parent.getItemAtPosition(position) as String
             Snackbar.make(binding.root, "Location: $selectedItem", Snackbar.LENGTH_LONG).show()

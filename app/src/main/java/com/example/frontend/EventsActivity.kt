@@ -31,12 +31,13 @@ class EventsActivity : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() {
-        eventsAdapter = EventsAdapter() //initialize adapter
+        eventsAdapter = EventsAdapter(this)
         binding.eventsRecycler.apply {
             layoutManager = LinearLayoutManager(this@EventsActivity)
             adapter = eventsAdapter
         }
     }
+
 
     private fun getDataEvents(city: String) {
         val retrofitBuilder = Retrofit.Builder()
@@ -53,7 +54,7 @@ class EventsActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val responseBody = response.body()!!
-                    eventsAdapter.setData(responseBody) // set data to adapter
+                    eventsAdapter.setData(responseBody) //set data to adapter
                 } else {
                     Log.d("EventsActivity", "failed to retrieve events for city: $city")
                 }

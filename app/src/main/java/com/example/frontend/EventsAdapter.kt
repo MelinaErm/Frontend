@@ -1,5 +1,8 @@
 package com.example.frontend
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,10 +11,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
+class EventsAdapter(private val context: Context) : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
 
     private var eventsList: List<DataEventsItem> = ArrayList()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(events: List<DataEventsItem>) {
         eventsList = events
         notifyDataSetChanged()
@@ -25,6 +29,21 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val event = eventsList[position]
         holder.bind(event)
+
+        //set click listener to handle item click
+        holder.itemView.setOnClickListener {
+            //pass event details to EventDetailsActivity
+            val intent = Intent(context, EventDetailsActivity::class.java).apply {
+                putExtra("eventTitle", event.title)
+                putExtra("eventDescription", event.description)
+                putExtra("eventDate", event.date)
+                putExtra("eventPrice", event.price)
+                putExtra("eventCity", event.city)
+                putExtra("remainingTickets", event.remaining_tickets)
+                putExtra("imageUrl", event.image)
+            }
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
