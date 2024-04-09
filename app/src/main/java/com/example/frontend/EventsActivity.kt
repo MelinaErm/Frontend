@@ -16,7 +16,7 @@ const val BASE_URL = "https://outrageous-leather-jacket-foal.cyclic.app/"
 class EventsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEventsBinding
-    private lateinit var eventsAdapter: EventsAdapter //define adapter
+    private lateinit var eventsAdapter: EventsAdapter // define adapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +24,15 @@ class EventsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val selectedCity = intent.getStringExtra("selectedCity") ?: ""
+        val eventType = intent.getStringExtra("eventType") ?: ""
         setUpRecyclerView()
-        getDataEvents(selectedCity)
+
+        //if eventType is provided, filter events by eventType, else fetch all events for the city
+        if (eventType.isNotEmpty()) {
+            getDataEventsByType(eventType)
+        } else {
+            getDataEvents(selectedCity)
+        }
 
         supportActionBar?.hide()
     }
@@ -37,7 +44,6 @@ class EventsActivity : AppCompatActivity() {
             adapter = eventsAdapter
         }
     }
-
 
     private fun getDataEvents(city: String) {
         val retrofitBuilder = Retrofit.Builder()
@@ -54,7 +60,7 @@ class EventsActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val responseBody = response.body()!!
-                    eventsAdapter.setData(responseBody) //set data to adapter
+                    eventsAdapter.setData(responseBody) // set data to adapter
                 } else {
                     Log.d("EventsActivity", "failed to retrieve events for city: $city")
                 }
@@ -65,4 +71,33 @@ class EventsActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun getDataEventsByType(eventType: String) {
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+            .create(EventService::class.java)
+
+        val retrofitData = retrofitBuilder.getEventsForType(eventType)
+        retrofitData.enqueue(object : Callback<List<DataEventsItem>> {
+            override fun onResponse(
+                call: Call<List<DataEventsItem>>,
+                response: Response<List<DataEventsItem>>
+            ) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body()!!
+                    eventsAdapter.setData(responseBody) // set data to adapter
+                } else {
+                    Log.d("EventsActivity", "failed to retrieve events for type: $eventType")
+                }
+            }
+
+            override fun onFailure(call: Call<List<DataEventsItem>>, t: Throwable) {
+                Log.d("EventsActivity", "onFailure: " + t.message)
+            }
+        })
+    }
+
+
 }
