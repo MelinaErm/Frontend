@@ -61,6 +61,7 @@ class EventsActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val responseBody = response.body()!!
                     eventsAdapter.setData(responseBody) // set data to adapter
+                    updateEventCount(responseBody.size)
                 } else {
                     Log.d("EventsActivity", "failed to retrieve events for city: $city")
                 }
@@ -88,6 +89,7 @@ class EventsActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val responseBody = response.body()!!
                     eventsAdapter.setData(responseBody) // set data to adapter
+                    updateEventCount(responseBody.size)
                 } else {
                     Log.d("EventsActivity", "failed to retrieve events for type: $eventType")
                 }
@@ -98,6 +100,11 @@ class EventsActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun updateEventCount(count: Int) {
+        binding.eventCountTextview.text = "Search Results: $count"
+    }
+
 
 
 }

@@ -20,7 +20,25 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val locationsWithDetails = arrayOf("Athens", "Thessaloniki")
+        val locationsWithDetails = arrayOf("Athens","Alexandroupoli","Arta",
+            "Chania","Corfu","Chalkida",
+            "Drama","Delphi",
+            "Elefsina","Edessa",
+            "Giannitsa","Grevena",
+            "Heraklion",
+            "Ioannina",
+            "Kalamata","Kavala","Kozani",
+            "Lamia","Livadeia","Lefkada","Larissa",
+            "Mytilini",
+            "Nafplio","Naxos",
+            "Patra","Preveza",
+            "Rethymno","Rodos",
+            "Sparti","Serres",
+            "Thessaloniki","Tripoli","Trikala",
+            "Volos","Veroia",
+            "Xanthi",
+            "Zakynthos"
+        )
 
         //set up ArrayAdapter for AutoCompleteTextView
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, locationsWithDetails)
