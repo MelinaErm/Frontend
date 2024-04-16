@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
+
 class EventsAdapter(private val context: Context) : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
 
     private var eventsList: List<DataEventsItem> = ArrayList()
@@ -62,6 +63,14 @@ class EventsAdapter(private val context: Context) : RecyclerView.Adapter<EventsA
             dateTextView.text = event.date
             priceTextView.text = event.price.toString()
             cityTextView.text = event.city
+
+            // Set background based on category
+            val shadowDrawableResId = when (event.type) {
+                "Music", "Art", "Sports", "Workshop" -> R.drawable.border_background2
+                "Food","Dance", "Technology", "Science" -> R.drawable.border_background
+                else -> R.drawable.default_shadow
+            }
+            itemView.setBackgroundResource(shadowDrawableResId)
 
             //load image using Glide
             Glide.with(itemView)

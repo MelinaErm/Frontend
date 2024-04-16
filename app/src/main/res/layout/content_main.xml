@@ -13,6 +13,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"
         android:text="Search by category"
+        android:fontFamily="@font/horizon2"
         android:textSize="14sp"
         android:textStyle="bold" />
 
@@ -42,7 +43,7 @@
                     android:id="@+id/btn_music"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -63,6 +64,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Music"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -81,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -102,6 +104,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Food"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -129,7 +132,7 @@
                     android:id="@+id/btn_art"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -150,6 +153,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Art"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -169,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -190,6 +194,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Dance"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -218,7 +223,7 @@
                     android:id="@+id/btn_sports"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -239,6 +244,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Sports"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -257,7 +263,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -278,6 +284,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Technology"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -306,7 +313,7 @@
                     android:id="@+id/btn_workshop"
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -327,6 +334,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Workshop"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>
@@ -345,7 +353,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="150dp"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/white">
+                    android:elevation="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -366,6 +374,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Science"
+                            android:fontFamily="@font/horizon2"
                             android:textColor="@android:color/white" />
 
                     </LinearLayout>

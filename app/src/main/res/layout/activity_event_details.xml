@@ -20,6 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Event Title"
+                android:fontFamily="@font/horizon2"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp" />
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date:"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -53,6 +55,7 @@
                 android:layout_marginTop="17dp"
                 android:layout_toRightOf="@id/date_label"
                 android:text="Event Date"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/darker_gray" />
 
             <!-- price event -->
@@ -61,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Price:"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -75,6 +79,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_toRightOf="@id/price_label"
                 android:text="Event Price €"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/darker_gray" />
 
             <!-- city event -->
@@ -83,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="City:"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -97,6 +103,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_toRightOf="@id/city_label"
                 android:text="Event City"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/darker_gray" />
 
             <!-- remaining tickets -->
@@ -105,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remaining Tickets:"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
@@ -119,6 +127,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_toRightOf="@id/remaining_tickets_label"
                 android:text="Remaining Tickets"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/darker_gray" />
 
             <!-- description event -->
@@ -127,6 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Event Description"
+                android:fontFamily="@font/horizon2"
                 android:textColor="@android:color/darker_gray"
                 android:layout_marginTop="16dp"
                 android:layout_below="@id/remaining_tickets_label" />
@@ -137,6 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Send Ticket"
+                android:fontFamily="@font/horizon2"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_below="@id/event_description_text"
